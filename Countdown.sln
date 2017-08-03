@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{368A0D96-B5C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Countdown.Api.Services", "Countdown.Api.Services\Countdown.Api.Services.csproj", "{871F25F8-3EC0-4B9E-A118-B9ACEE063262}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Countdown.Dtos", "Countdown.Dtos\Countdown.Dtos.csproj", "{AA5B225E-4A8C-4583-9C8F-F31C92D84B23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{871F25F8-3EC0-4B9E-A118-B9ACEE063262}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{871F25F8-3EC0-4B9E-A118-B9ACEE063262}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{871F25F8-3EC0-4B9E-A118-B9ACEE063262}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA5B225E-4A8C-4583-9C8F-F31C92D84B23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA5B225E-4A8C-4583-9C8F-F31C92D84B23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA5B225E-4A8C-4583-9C8F-F31C92D84B23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA5B225E-4A8C-4583-9C8F-F31C92D84B23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

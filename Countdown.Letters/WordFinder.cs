@@ -1,20 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using Countdown.Letters.Interfaces;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Countdown.Letters
 {
-    public class WordFinder
+    public class WordFinder : IWordFinder
     {
-        private readonly WordList _wordList;
+        private readonly IWordList _wordList;
 
-        public WordFinder(WordList wordList)
+        public WordFinder(IWordList wordList)
         {
             _wordList = wordList;
         }
 
         public IEnumerable<string> FindWordsFromLetters(IEnumerable<char> letters)
         {
-            return _wordList.Words
+            return _wordList.Words()
                 .Where(w => LettersMakeWord(w, letters));
         }
 

@@ -1,14 +1,21 @@
-﻿using Countdown.Api.Services.Models;
-using System;
+﻿using Countdown.Api.Services.Interfaces;
+using Countdown.Api.Services.Models;
+using Countdown.Numbers.Interfaces;
 
 namespace Countdown.Api.Services
 {
-    public class NumbersService
+    public class NumbersService : INumbersService
     {
-        public NumbersSolutionDto Solution { get; set; }
-        public void GetSolution(int target, int[] numbers)
-        {
+        private readonly INumbersSolver _numbersSolver;
 
+        public NumbersService(INumbersSolver numbersSolver)
+        {
+            _numbersSolver = numbersSolver;
+        }
+
+        public NumbersSolutionDto GetSolutions(int target, int[] numbers)
+        {
+            return _numbersSolver.Solve(target, numbers);
         }
     }
 }

@@ -1,11 +1,13 @@
-﻿using Countdown.Numbers.Extensions;
+﻿using Countdown.Api.Services.Models;
+using Countdown.Numbers.Extensions;
+using Countdown.Numbers.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Countdown.Numbers
 {
-    public class NumbersSolver
+    public class NumbersSolver : INumbersSolver
     {
         private Node Root { get; set; }
         private int Target { get; set; }
@@ -13,16 +15,24 @@ namespace Countdown.Numbers
         public int DistanceFromTarget { get; set; } = 999;
         private IEnumerable<string> Operators => new List<string> { "+", "-", "*", "/" };
 
-        public NumbersSolver(int[] numbers, int target)
+        public NumbersSolutionDto Solve(int target, int[] numbers)
         {
             Target = target;
             Root = new Node(numbers);
-        }
-
-        public void Solve()
-        {
             GrowSolution(Root);
             Solutions.OrderBy(s => s.Depth);
+            return GetSolutionDto();
+        }
+
+        public NumbersSolutionDto GetSolutionDto()
+        {
+            return new NumbersSolutionDto
+            {
+                Target = Target,
+                Numbers = Root.Numbers,
+                DistanceFromTarget = DistanceFromTarget,
+                Solutions = Formatter.Format(Solutions)
+            };
         }
 
         private void GrowSolution(Node node)

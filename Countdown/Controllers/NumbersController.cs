@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Countdown.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Countdown.Controllers
@@ -9,43 +6,23 @@ namespace Countdown.Controllers
     [Route("api/[controller]")]
     public class NumbersController : Controller
     {
-        // GET api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly INumbersService _numbersService;
+
+        public NumbersController(INumbersService numbersService)
         {
-            return new string[] { "value1", "value2" };
+            _numbersService = numbersService;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // Call using http://localhost:49730/api/numbers/solve/500?n=1&n=2&n=3&n=50&n=10&n=100
+        // GET api/numbers/solve/{target}?nums=n1&nums=n2&nums=n3&nums=n4&nums=n5&nums=n6
         [Route("solve/{target}")]
-        public string Solve(int target, [FromQuery] int[] n)
+        public ActionResult Solve(int target, [FromQuery] int[] nums)
         {
-            return "hi";
-        }
+            if(nums.Length != 6)
+            {
+                return NotFound("nums must have a length of 6");
+            }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return Json(_numbersService.GetSolutions(target, nums));
         }
     }
 }

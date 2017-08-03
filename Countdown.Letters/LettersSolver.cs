@@ -1,27 +1,27 @@
-﻿using System.Collections.Generic;
+﻿using Countdown.Letters.Interfaces;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Countdown.Letters
 {
-    public class LettersSolver
+    public class LettersSolver : ILettersSolver
     {
-        public char[] Letters { get; set; }
-        public IDictionary<int, List<string>> Solutions { get; set; }
+        private readonly IWordFinder _wordFinder;
 
-        public LettersSolver(char[] letters)
+        public LettersSolver(IWordFinder wordFinder)
         {
-            Letters = letters;
+            _wordFinder = wordFinder;
         }
 
-        public void Solve()
+        public IDictionary<int, List<string>> Solve(char[] letters)
         {
-            var wordList = new WordList(@"C:\Users\Gary Hubbard\Documents\LINQPad Queries\Countdown2017\Letters\sowpods.txt");
-            var wordFinder = new WordFinder(wordList);
+            //var wordList = new WordList(@"C:\Users\Gary Hubbard\Documents\LINQPad Queries\Countdown2017\Letters\sowpods.txt");
+            //var wordFinder = new WordFinder(wordList);
 
-            var sortedLetters = Letters.OrderBy(l => l).ToArray();
-            var matchedWords = wordFinder.FindWordsFromLetters(Letters);
+            var sortedLetters = letters.OrderBy(l => l).ToArray();
+            var matchedWords = _wordFinder.FindWordsFromLetters(letters);
 
-            Solutions = matchedWords
+            return matchedWords
                 .GroupBy(x => x.Length)
                 .ToDictionary(g => g.Key, g => g.ToList());
         }

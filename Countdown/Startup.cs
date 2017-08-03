@@ -7,6 +7,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Countdown.Api.Services.Interfaces;
+using Countdown.Api.Services;
+using Countdown.Numbers;
+using Countdown.Numbers.Interfaces;
+using Countdown.Letters;
+using Countdown.Letters.Interfaces;
 
 namespace Countdown
 {
@@ -29,7 +35,12 @@ namespace Countdown
         {
             // Add framework services.
             services.AddMvc();
-            //services.AddScoped<IThing, ConcreteThing>();
+            services.AddScoped<INumbersSolver, NumbersSolver>();
+            services.AddScoped<INumbersService, NumbersService>();
+            services.AddScoped<IWordList, WordListSowpods>();
+            services.AddScoped<IWordFinder, WordFinder>();
+            services.AddScoped<ILettersSolver, LettersSolver>();
+            services.AddScoped<ILettersService, LettersService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

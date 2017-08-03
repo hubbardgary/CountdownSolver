@@ -17,5 +17,8 @@
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Countdown.Api.Services\Countdown.Api.Services.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Countdown.Numbers
 {
-    public class Formatter
+    public static class Formatter
     {
         public static IEnumerable<string> Format(List<Node> solutions)
         {

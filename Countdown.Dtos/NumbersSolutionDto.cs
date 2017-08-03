@@ -9,6 +9,6 @@ namespace Countdown.Api.Services.Models
         public int Target { get; set; }
         public int[] Numbers { get; set; }
         public int DistanceFromTarget { get; set; }
-        public List<string> Solutions { get; set; }
+        public IEnumerable<string> Solutions { get; set; }
     }
 }

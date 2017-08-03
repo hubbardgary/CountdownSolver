@@ -9,8 +9,8 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             var letters = new[] { 'b', 'e', 'd', 'd', 'a', 'r', 's', 'a', 'p' };
-            var lettersSolver = new LettersSolver(letters);
-            lettersSolver.Solve();
+            var lettersSolver = new LettersSolver(new WordFinder(new WordListSowpods()));
+            lettersSolver.Solve(letters);
 
 
             //var numbers = new[] { 1, 7, 9, 10, 25, 100 };
@@ -20,8 +20,8 @@ namespace ConsoleApp1
             var numbers = new[] { 25, 1, 3, 2, 1, 4 };
             var target = 549;
 
-            var numbersSolver = new NumbersSolver(numbers, target);
-            numbersSolver.Solve();
+            var numbersSolver = new NumbersSolver();
+            numbersSolver.Solve(target, numbers);
 
             Console.WriteLine($"The numbers were {string.Join(" ", numbers)}");
             Console.WriteLine($"The target was {target}");

@@ -4,4 +4,14 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Dictionaries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Dictionaries\sowpods.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

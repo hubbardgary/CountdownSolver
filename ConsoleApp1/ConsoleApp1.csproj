@@ -5,6 +5,10 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Countdown.Letters\Countdown.Letters.csproj" />
     <ProjectReference Include="..\Countdown.Numbers\Countdown.Numbers.csproj" />

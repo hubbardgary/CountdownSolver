@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Countdown.Api", "Countdown\Countdown.Api.csproj", "{CD72F179-4871-450C-8BEC-A32B07BA6168}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Countdown.Numbers", "Countdown.Numbers\Countdown.Numbers.csproj", "{32E6144B-6DF5-45AB-BE7B-F84C70AA50F1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Countdown.Letters", "Countdown.Letters\Countdown.Letters.csproj", "{2793B339-4E42-4DA4-AE97-E3D7C939CF4C}"
@@ -21,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Countdown.Api.Services", "C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Countdown.Dtos", "Countdown.Dtos\Countdown.Dtos.csproj", "{AA5B225E-4A8C-4583-9C8F-F31C92D84B23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Countdown.Letters.Tests.Unit", "Countdown.Letters.Tests.Unit\Countdown.Letters.Tests.Unit.csproj", "{A66F8B9E-9892-4FF4-8BB8-47A138C7E49E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Countdown.Letters.Tests.Unit", "Countdown.Letters.Tests.Unit\Countdown.Letters.Tests.Unit.csproj", "{A66F8B9E-9892-4FF4-8BB8-47A138C7E49E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Countdown.Api", "Countdown.Api\Countdown.Api.csproj", "{53086FAC-3DF0-47D0-A95A-8740F9AC610D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CD72F179-4871-450C-8BEC-A32B07BA6168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD72F179-4871-450C-8BEC-A32B07BA6168}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD72F179-4871-450C-8BEC-A32B07BA6168}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD72F179-4871-450C-8BEC-A32B07BA6168}.Release|Any CPU.Build.0 = Release|Any CPU
 		{32E6144B-6DF5-45AB-BE7B-F84C70AA50F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{32E6144B-6DF5-45AB-BE7B-F84C70AA50F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32E6144B-6DF5-45AB-BE7B-F84C70AA50F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -61,14 +57,18 @@ Global
 		{A66F8B9E-9892-4FF4-8BB8-47A138C7E49E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A66F8B9E-9892-4FF4-8BB8-47A138C7E49E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A66F8B9E-9892-4FF4-8BB8-47A138C7E49E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53086FAC-3DF0-47D0-A95A-8740F9AC610D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53086FAC-3DF0-47D0-A95A-8740F9AC610D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53086FAC-3DF0-47D0-A95A-8740F9AC610D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53086FAC-3DF0-47D0-A95A-8740F9AC610D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{CD72F179-4871-450C-8BEC-A32B07BA6168} = {368A0D96-B5CF-49EB-8033-39BB8075A69C}
 		{B2489953-92CD-4A22-BE70-B10925E95A4B} = {B173AB5D-3E35-45F2-9E8B-377931A888FD}
 		{871F25F8-3EC0-4B9E-A118-B9ACEE063262} = {368A0D96-B5CF-49EB-8033-39BB8075A69C}
 		{A66F8B9E-9892-4FF4-8BB8-47A138C7E49E} = {B173AB5D-3E35-45F2-9E8B-377931A888FD}
+		{53086FAC-3DF0-47D0-A95A-8740F9AC610D} = {368A0D96-B5CF-49EB-8033-39BB8075A69C}
 	EndGlobalSection
 EndGlobal

@@ -7,7 +7,7 @@ namespace Countdown.Letters
 {
     public class WordListSowpods : IWordList
     {
-        private const string _filename = @"C:\Users\Gary Hubbard\Documents\LINQPad Queries\Countdown2017\Letters\sowpods.txt";
+        private const string _filename = @"dictionaries\sowpods.txt";
         private readonly IEnumerable<string> _permittedWords;
 
         public WordListSowpods()

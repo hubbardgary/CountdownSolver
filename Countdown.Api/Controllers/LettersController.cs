@@ -1,7 +1,7 @@
 ﻿using Countdown.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Countdown.Controllers
+namespace Countdown.Api.Controllers
 {
     [Route("api/[controller]")]
     public class LettersController : Controller
@@ -19,10 +19,10 @@ namespace Countdown.Controllers
         {
             if (letters.Length != 9)
             {
-                return NotFound("letters must have a length of 9");
+                return BadRequest("letters must have a length of 9");
             }
 
-            return Json(_lettersService.GetSolutions(letters));
+            return Ok(_lettersService.GetSolutions(letters));
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Countdown.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Countdown.Controllers
+namespace Countdown.Api.Controllers
 {
     [Route("api/[controller]")]
     public class NumbersController : Controller
@@ -17,12 +17,17 @@ namespace Countdown.Controllers
         [Route("solve/{target}")]
         public ActionResult Solve(int target, [FromQuery] int[] nums)
         {
-            if(nums.Length != 6)
+            if (target < 100 || target > 999)
             {
-                return NotFound("nums must have a length of 6");
+                return BadRequest("target must be between 100 and 999 inclusive");
             }
 
-            return Json(_numbersService.GetSolutions(target, nums));
+            if (nums.Length != 6)
+            {
+                return BadRequest("nums must have a length of 6");
+            }
+
+            return Ok(_numbersService.GetSolutions(target, nums));
         }
     }
 }

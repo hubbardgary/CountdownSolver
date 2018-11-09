@@ -35,6 +35,7 @@ namespace Countdown
         {
             // Add framework services.
             services.AddMvc();
+            services.AddCors();
             services.AddScoped<INumbersSolver, NumbersSolver>();
             services.AddScoped<INumbersService, NumbersService>();
             services.AddScoped<IWordList, WordListSowpods>();
@@ -49,6 +50,9 @@ namespace Countdown
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseCors(
+                options => options.WithOrigins("http://localhost:8000").AllowAnyMethod()
+            );
             app.UseMvc();
         }
     }

@@ -29,7 +29,7 @@ namespace Countdown.Api.Tests.Unit
             // ASSERT
             Assert.IsType(typeof(BadRequestObjectResult), result);
             Assert.Equal(400, ((BadRequestObjectResult)result).StatusCode);
-            Assert.Equal("nums must have a length of 6", ((BadRequestObjectResult)result).Value);
+            Assert.Contains("Request must provide 6 numbers", (string)((BadRequestObjectResult)result).Value);
         }
 
         [Theory]
@@ -42,7 +42,7 @@ namespace Countdown.Api.Tests.Unit
             // ASSERT
             Assert.IsType(typeof(BadRequestObjectResult), result);
             Assert.Equal(400, ((BadRequestObjectResult)result).StatusCode);
-            Assert.Equal("target must be between 100 and 999 inclusive", ((BadRequestObjectResult)result).Value);
+            Assert.Contains("Target must be between 100 and 999 inclusive", (string)((BadRequestObjectResult)result).Value);
         }
 
         [Theory]
@@ -55,7 +55,7 @@ namespace Countdown.Api.Tests.Unit
             // ASSERT
             Assert.IsType(typeof(BadRequestObjectResult), result);
             Assert.Equal(400, ((BadRequestObjectResult)result).StatusCode);
-            Assert.Equal("target must be between 100 and 999 inclusive", ((BadRequestObjectResult)result).Value);
+            Assert.Contains("Target must be between 100 and 999 inclusive", (string)((BadRequestObjectResult)result).Value);
         }
 
         [Theory]

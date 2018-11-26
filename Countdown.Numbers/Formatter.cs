@@ -5,7 +5,7 @@ namespace Countdown.Numbers
 {
     public static class Formatter
     {
-        public static IEnumerable<string> Format(List<Node> solutions)
+        public static IEnumerable<string> Format(IEnumerable<Node> solutions)
         {
             var formattedSolutions = new List<string>();
 
@@ -18,7 +18,11 @@ namespace Countdown.Numbers
                     formattedSolution = $"{node.Expression.X} {node.Expression.Operation} {node.Expression.Y} = {node.CurrentValue}{Environment.NewLine}{formattedSolution}";
                     node = node.Parent;
                 }
-                formattedSolutions.Add(formattedSolution);
+
+                if (!formattedSolutions.Contains(formattedSolution))
+                {
+                    formattedSolutions.Add(formattedSolution);
+                }
 
             }
             return formattedSolutions;

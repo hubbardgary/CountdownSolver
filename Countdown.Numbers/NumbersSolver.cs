@@ -20,20 +20,16 @@ namespace Countdown.Numbers
             Target = target;
             Root = new Node(numbers);
             GrowSolution(Root);
-            Solutions.OrderBy(s => s.Depth);
             return GetSolutionDto();
         }
 
-        public NumbersSolutionDto GetSolutionDto()
+        public NumbersSolutionDto GetSolutionDto() => new NumbersSolutionDto
         {
-            return new NumbersSolutionDto
-            {
-                Target = Target,
-                Numbers = Root.Numbers,
-                DistanceFromTarget = DistanceFromTarget,
-                Solutions = Formatter.Format(Solutions)
-            };
-        }
+            Target = Target,
+            Numbers = Root.Numbers,
+            DistanceFromTarget = DistanceFromTarget,
+            Solutions = Formatter.Format(Solutions.OrderBy(s => s.Depth))
+        };
 
         private void GrowSolution(Node node)
         {

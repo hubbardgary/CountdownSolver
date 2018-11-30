@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Countdown.Dtos\Countdown.Core.Dtos.csproj" />
+    <ProjectReference Include="..\..\Core\Countdown.Letters\Countdown.Core.Letters.csproj" />
+    <ProjectReference Include="..\..\Core\Countdown.Numbers\Countdown.Core.Numbers.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,177 @@
+@media only screen and (min-width : 0px) {
+	input.tile {
+		box-shadow:inset 0 0 0 1pt #000000;
+		border-radius:7px;
+		margin: 0px;
+		font-size: 2em;
+		font-family: "futurabold";
+	}
+	input.num {
+		width: 60px;
+		height: 60px;
+	}
+	input.txt {
+		width: 60px;
+		height: 60px;
+		text-transform: uppercase;
+	}
+	input.target {
+		width: 70px;
+		height: 60px;
+	}
+	input.choose-btn {
+		font-size: 25px;
+	}
+	button.btn {
+		margin: 2px;
+	}
+	div.solution-container {
+		font-size: 1.5em;
+	}
+}
+@media only screen and (min-width : 768px) {
+	input.tile {
+		box-shadow:inset 0 0 0 2pt #000000;
+		border-radius:10px;
+		margin: 1px;
+		font-size: 2em;
+		font-family: "futurabold";
+	}
+	input.num {
+		width: 70px;
+		height: 70px;
+		text-transform: uppercase;
+	}
+	input.txt {
+		width: 70px;
+		height: 70px;
+	}
+	input.target {
+		width: 90px;
+		height: 70px;
+	}
+	input.choose-btn {
+		font-size: 2em;
+	}
+	div.solution-container {
+		font-size: 1.5em;
+	}
+}
+@media only screen and (min-width : 992px) {
+	input.tile {
+		box-shadow:inset 0 0 0 3pt #000000;
+		border-radius:10px;
+		margin: 2px;
+		font-size: 3em;
+		font-family: "futurabold";
+	}
+	input.num {
+		width: 90px;
+		height: 90px;
+	}
+	input.txt {
+		width: 90px;
+		height: 90px;
+		text-transform: uppercase;
+	}
+	input.target {
+		width: 115px;
+		height: 90px;
+	}
+	input.choose-btn {
+		font-size: 2em;
+	}
+	div.solution-container {
+		font-size: 2em;
+	}
+}
+
+/* Override Bootstrap navbar collapse behaviour */
+.navbar-collapse.collapse {
+	display: block !important;
+}
+.navbar-nav>li, .navbar-nav {
+	float: left !important;
+}
+.navbar-nav.navbar-right:last-child {
+	margin-right: -15px !important;
+}
+.navbar-right {
+	float: right !important;
+}
+
+/* Hide Webkit spinners on number input */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Hide spinners on number input in Firefox */
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+@font-face {
+    font-family: "futurabold";
+    src: url("../assets/futura-bold.woff") format('woff');
+}
+body {
+	background-color: #6bd5ff;
+}
+div.board {
+	text-align: center;
+	margin-top: 50px;
+}
+input.tile {
+	color:white;
+	background-color: #1e87ff;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+}
+div.solution-container {
+	background-color: #fff8c9;
+	box-shadow:inset 0 0 0 1pt #000000;
+	vertical-align: middle;
+	font-family: sans-serif;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left:20px;
+	margin-top: 10px;
+	margin-left: 20%;
+	margin-right: 20%;
+	display: none;
+}
+
+/* Spinner */
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 0, 0, 0, .3 ) 
+                url('../assets/spinner.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading .modal {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Countdown Numbers</title>
+	
+	<link rel="stylesheet" href="styles/external/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/countdown.css">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Countdown</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Numbers</a></li>
+				<li><a href="letters.html">Letters</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="row">
+		<div class="board">
+			<div class="tile-container">
+				<div class="number-container">
+					<input type="number" id="num1" class="tile num" min="1" max="100" autofocus>
+					<input type="number" id="num2" class="tile num" min="1" max="100">
+					<input type="number" id="num3" class="tile num" min="1" max="100">
+					<input type="number" id="num4" class="tile num" min="1" max="100">
+					<input type="number" id="num5" class="tile num" min="1" max="100">
+					<input type="number" id="num6" class="tile num" min="1" max="100">
+				</div>
+				<div class="target-container">
+					<input type="number" id="target" class="tile target" min="1" max="999">
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">Pick numbers <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#" id="allSmall">All small</a></li>
+						<li><a href="#" id="oneLarge">1 large</a></li>
+						<li><a href="#" id="twoLarge">2 large</a></li>
+						<li><a href="#" id="threeLarge">3 large</a></li>
+						<li><a href="#" id="fourLarge">4 large</a></li>
+					</ul>
+				</div>
+				<button type="button" id="setTarget" class="btn btn-primary btn-lg">Set Target</button>
+			</div>
+			<div>
+				<button type="button" id="getSolutions" class="btn btn-primary btn-lg">Find Solutions</button>
+			</div>
+		</div>
+		<div id="solutions" class="solution-container"></div>
+	</div>
+	<div class="modal">
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="scripts/external/jquery-3.3.1.min.js"></script>
+	<script src="scripts/external/bootstrap.min.js"></script>
+	<script src="scripts/countdown.shared.js"></script>
+	<script src="scripts/countdown.numbers.js"></script>
+</body>
+</html>

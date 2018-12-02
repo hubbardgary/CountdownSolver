@@ -1,5 +1,5 @@
-using Countdown.Api.Services.Interfaces;
 using Countdown.Api.Controllers;
+using Countdown.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Xunit;

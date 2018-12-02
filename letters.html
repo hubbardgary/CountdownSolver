@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Countdown Letters</title>
+	
+	<link rel="stylesheet" href="styles/external/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/countdown.css">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Countdown</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="numbers.html">Numbers</a></li>
+				<li class="active"><a href="#">Letters</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="row">
+		<div class="board">
+			<div class="tile-container">
+				<div class="letters-container">
+					<input type="text" id="letter1" class="tile txt" maxLength="1" autofocus>
+					<input type="text" id="letter2" class="tile txt" maxLength="1">
+					<input type="text" id="letter3" class="tile txt" maxLength="1">
+					<input type="text" id="letter4" class="tile txt" maxLength="1">
+					<input type="text" id="letter5" class="tile txt" maxLength="1">
+					<input type="text" id="letter6" class="tile txt" maxLength="1">
+					<input type="text" id="letter7" class="tile txt" maxLength="1">
+					<input type="text" id="letter8" class="tile txt" maxLength="1">
+					<input type="text" id="letter9" class="tile txt" maxLength="1">
+				</div>
+				<button type="button" id="pickVowel" class="btn btn-primary btn-lg">Vowel</button>
+				<button type="button" id="pickConsonant" class="btn btn-primary btn-lg">Consonant</button>
+				<button type="button" id="luckyDip" class="btn btn-primary btn-lg">I'm Feeling Lucky!</button>
+			</div>
+			<div>
+				<button type="button" id="clearTiles" class="btn btn-primary btn-lg">Clear</button>
+			</div>
+			<div>
+				<button type="button" id="getSolutions" class="btn btn-primary btn-lg">Find Solutions</button>
+			</div>
+		</div>
+		<div id="solutions" class="solution-container"></div>
+	</div>
+	<div class="modal">
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="scripts/external/jquery-3.3.1.min.js"></script>
+	<script src="scripts/external/bootstrap.min.js"></script>
+	<script src="scripts/countdown.shared.js"></script>
+	<script src="scripts/countdown.letters.js"></script>
+</body>
+</html>

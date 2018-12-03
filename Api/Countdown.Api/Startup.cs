@@ -41,8 +41,9 @@ namespace Countdown.Api
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            var appSettings = Configuration.GetSection("AppSettings");
             app.UseCors(
-                options => options.WithOrigins("http://localhost:8000").AllowAnyMethod()
+                options => options.WithOrigins(appSettings.GetValue<string>("PermittedOrigin")).AllowAnyMethod()
             );
             app.UseMvc();
         }

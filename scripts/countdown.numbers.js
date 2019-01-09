@@ -68,7 +68,7 @@ function getNumbersSolutions() {
 		return;
 	}
 	
-	var url = `http://localhost:49730/api/numbers/solve/${target}?nums=${num1}&nums=${num2}&nums=${num3}&nums=${num4}&nums=${num5}&nums=${num6}`;
+	var url = `https://countdownapitest.azurewebsites.net/api/numbers/solve/${target}?nums=${num1}&nums=${num2}&nums=${num3}&nums=${num4}&nums=${num5}&nums=${num6}`;
 	makeCorsRequest(url);
 }
 

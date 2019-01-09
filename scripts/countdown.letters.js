@@ -162,7 +162,7 @@ function getLettersSolutions() {
 		return;
 	}
 	
-	var url = `http://localhost:49730/api/letters/solve?letters=${letter1}&letters=${letter2}&letters=${letter3}&letters=${letter4}&letters=${letter5}&letters=${letter6}&letters=${letter7}&letters=${letter8}&letters=${letter9}`;
+	var url = `https://countdownapitest.azurewebsites.net/api/letters/solve?letters=${letter1}&letters=${letter2}&letters=${letter3}&letters=${letter4}&letters=${letter5}&letters=${letter6}&letters=${letter7}&letters=${letter8}&letters=${letter9}`;
 	makeCorsRequest(url);
 }
 

@@ -201,3 +201,22 @@ document.getElementById('pickConsonant').addEventListener('click', pickConsonant
 document.getElementById('luckyDip').addEventListener('click', luckyDip);
 document.getElementById('clearTiles').addEventListener('click', resetTiles);
 document.getElementById('getSolutions').addEventListener('click', getLettersSolutions);
+
+// Add autoTab event to prevent having to tab to next field when entering letters manually
+let letter1 = document.getElementById("letter1");
+let letter2 = document.getElementById("letter2");
+let letter3 = document.getElementById("letter3");
+let letter4 = document.getElementById("letter4");
+let letter5 = document.getElementById("letter5");
+let letter6 = document.getElementById("letter6");
+let letter7 = document.getElementById("letter7");
+let letter8 = document.getElementById("letter8");
+let letter9 = document.getElementById("letter9");
+letter1.addEventListener('input', function() { autoTab(letter1, letter2); });
+letter2.addEventListener('input', function() { autoTab(letter2, letter3); });
+letter3.addEventListener('input', function() { autoTab(letter3, letter4); });
+letter4.addEventListener('input', function() { autoTab(letter4, letter5); });
+letter5.addEventListener('input', function() { autoTab(letter5, letter6); });
+letter6.addEventListener('input', function() { autoTab(letter6, letter7); });
+letter7.addEventListener('input', function() { autoTab(letter7, letter8); });
+letter8.addEventListener('input', function() { autoTab(letter8, letter9); });

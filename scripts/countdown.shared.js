@@ -53,3 +53,10 @@ function displaySolutions(xhr) {
 function randomIntFromInterval(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+function autoTab(currentField, nextField) {
+	if (currentField.getAttribute && currentField.value.length === parseInt(currentField.getAttribute('maxlength'))) {
+		nextField.focus();
+		nextField.select();
+	}
+}

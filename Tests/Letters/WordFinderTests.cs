@@ -55,6 +55,7 @@ namespace Countdown.Letters.Tests.Unit
             Assert.Equal(true, result);
         }
 
+        [Theory]
         [InlineData(new[] { 'a', 'n', 'e', 'e', 'l', 'p', 't', 'n', 'h' }, new[] { "elephant", "ant" })]
         [InlineData(new[] { 'a', 'n', 'e', 'm', 'o', 'y', 't', 'n', 'k' }, new[] { "ant", "monkey" })]
         [InlineData(new[] { 'i', 'n', 'e', 'g', 'o', 'a', 'r', 'f', 'f' }, new[] { "giraffe" })]
@@ -62,6 +63,24 @@ namespace Countdown.Letters.Tests.Unit
         [InlineData(new[] { 'd', 'l', 'r', 'm', 'l', 'a', 'a', 'o', 'i' }, new[] { "armadillo" })]
         [InlineData(new[] { 'd', 'l', 'r', 'm', 'm', 'a', 'a', 'o', 'i' }, new string[] { })]
         public void FindWordsFromLetters_ForVarietyOfWords_ReturnsListOfFoundWords(IEnumerable<char> letters, IEnumerable<string> expectedResults)
+        {
+            // ACT
+            var results = _wordFinder.FindWordsFromLetters(letters).ToList();
+
+            // ASSERT
+            Assert.Equal(expectedResults.Count(), results.Count());
+
+            foreach (var expectedResult in expectedResults)
+            {
+                Assert.Contains(expectedResult, results);
+            }
+        }
+
+        [Theory]
+        [InlineData(new[] { 't', 'o', 'r', 'g', 'n', 'a', 'a', 'u', 'n' }, new[] { "ant", "goat", "orangutan" })]
+        [InlineData(new[] { 'T', 'o', 'R', 'g', 'N', 'a', 'A', 'u', 'N' }, new[] { "ant", "goat", "orangutan" })]
+        [InlineData(new[] { 'T', 'O', 'R', 'G', 'N', 'A', 'A', 'U', 'N' }, new[] { "ant", "goat", "orangutan" })]
+        public void FindWordsFromLetters_ForMixedCaseLetters_ReturnsListOfFoundWords(IEnumerable<char> letters, IEnumerable<string> expectedResults)
         {
             // ACT
             var results = _wordFinder.FindWordsFromLetters(letters).ToList();

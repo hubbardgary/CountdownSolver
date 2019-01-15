@@ -15,10 +15,6 @@ namespace Countdown.Core.Letters
 
         public IDictionary<int, List<string>> Solve(char[] letters)
         {
-            //var wordList = new WordList(@"C:\Users\Gary Hubbard\Documents\LINQPad Queries\Countdown2017\Letters\sowpods.txt");
-            //var wordFinder = new WordFinder(wordList);
-
-            var sortedLetters = letters.OrderBy(l => l).ToArray();
             var matchedWords = _wordFinder.FindWordsFromLetters(letters);
 
             return matchedWords

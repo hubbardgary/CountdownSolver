@@ -21,16 +21,16 @@ namespace Countdown.Core.Letters
 
         public bool LettersMakeWord(string word, IEnumerable<char> letters)
         {
-            var sortedWord = string.Join("", word.OrderBy(x => x)).ToLower();
-            var sortedLetters = letters.OrderBy(l => l).ToArray();
+            var sortedWord = string.Join("", word.ToLower().OrderBy(x => x));
+            var sortedLetters = letters.Select(l => char.ToLower(l)).OrderBy(l => l);
 
             var lettersIdx = 0;
 
             for (var wordIdx = 0; wordIdx < sortedWord.Length; wordIdx++)
             {
-                while (lettersIdx < sortedLetters.Length)
+                while (lettersIdx < sortedLetters.Count())
                 {
-                    if (sortedLetters[lettersIdx] == sortedWord[wordIdx])
+                    if (sortedLetters.ElementAt(lettersIdx) == sortedWord[wordIdx])
                     {
                         if (wordIdx == sortedWord.Length - 1)
                             return true;
@@ -38,7 +38,7 @@ namespace Countdown.Core.Letters
                         lettersIdx++;
                         break;
                     }
-                    if (lettersIdx == sortedLetters.Length - 1)
+                    if (lettersIdx == sortedLetters.Count() - 1)
                     {
                         return false;
                     }
